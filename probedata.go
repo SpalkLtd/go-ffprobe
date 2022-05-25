@@ -89,6 +89,7 @@ type Stream struct {
 	Channels           int               `json:"channels,omitempty"`
 	ChannelLayout      string            `json:"channel_layout,omitempty"`
 	BitsPerSample      int               `json:"bits_per_sample,omitempty"`
+	FieldOrder         string            `json:"field_order,omitempty"`
 }
 
 // StreamDisposition is a json data structure to represent stream dispositions
