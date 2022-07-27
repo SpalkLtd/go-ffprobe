@@ -11,4 +11,4 @@ jobs:
         # if: github.event.pull_request.merged == true
         runs-on: ubuntu-latest
         steps:
-            - run: echo VERSION NUMBER IS ${${{github.head_ref}}#cut-version-}
+            - run: echo VERSION NUMBER IS ${${{github.head_ref}}}
