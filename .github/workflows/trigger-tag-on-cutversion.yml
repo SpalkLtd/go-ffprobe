@@ -12,4 +12,5 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - run: |
-                  echo VERSION NUMBER IS ${{github.head_ref}}
+                  BRANCH_NAME="${{ github.head_ref }}"
+                  echo VERSION NUMBER IS ${BRANCH_NAME##*-}
