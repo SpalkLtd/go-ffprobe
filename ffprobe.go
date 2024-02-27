@@ -71,11 +71,11 @@ func runProbe(cmd *exec.Cmd) (data *ProbeData, err error) {
 
 	err = cmd.Run()
 	if err != nil {
-		return nil, fmt.Errorf("error running %s [%s] %w", binPath, stdErr.String(), err)
+		return nil, fmt.Errorf("error running %s StdOut: [%s] StdErr: [%s] %w", binPath, outputBuf.String(), stdErr.String(), err)
 	}
 
 	if stdErr.Len() > 0 {
-		return nil, fmt.Errorf("ffprobe error: %s", stdErr.String())
+		return nil, fmt.Errorf("ffprobe error: StdOut: [%s] StdErr: [%s]", outputBuf.String(), stdErr.String())
 	}
 
 	data = &ProbeData{}
